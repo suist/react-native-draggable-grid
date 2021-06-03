@@ -250,6 +250,7 @@ export const DraggableGrid = function<DataType extends IBaseItemType>(
     if (item.disabledDrag) return
 
     setPanResponderCapture(true)
+    props.onDragWillStart && props.onDragWillStart(); // added this line
     setActiveItemIndex(itemIndex)
   }
   function startDragStartAnimation() {
